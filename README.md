@@ -121,13 +121,13 @@ gastos/
 ## 📸 Screenshots
 
 ### 🔐 Login
-![Login](./screenshots/login.png)
+![Login](./frontend/src/assets/screenshots/login.png)
 
 ### 💸 Dashboard
-![Dashboard](./screenshots/dashboard.png)
+![Dashboard](././frontend/src/assets/screenshots/dashboard.png)
 
 ### 📱 Responsive
-![Mobile](./screenshots/mobile.png)
+![Mobile](./frontend/src/assets/screenshots/mobile.png)
 ---
 
 ## ⚙️ Instalación y ejecución
