@@ -139,6 +139,22 @@ export const Content = () => {
         </div>
       </div>
 
+      {/* 🧑‍💻 REPOSITORIO */}
+      <div className="container py-5 text-center">
+        <h2>📂 Código del proyecto</h2>
+        <p>Puedes ver el código completo en GitHub</p>
+
+        <a 
+          href="https://github.com/yonier321/gastos-app" 
+          target="_blank" 
+          rel="noreferrer"
+        >
+          <Button variant="outlined" size="large">
+            Ver repositorio
+          </Button>
+        </a>
+      </div>
+
       {/* 🚀 CTA FINAL */}
       <div className="container-fluid bg-primary text-white text-center py-5">
         <div className="container px-3">

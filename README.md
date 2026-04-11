@@ -114,6 +114,20 @@ gastos/
 |
 |
 └── README.md
+
+
+
+
+## 📸 Screenshots
+
+### 🔐 Login
+![Login](./screenshots/login.png)
+
+### 💸 Dashboard
+![Dashboard](./screenshots/dashboard.png)
+
+### 📱 Responsive
+![Mobile](./screenshots/mobile.png)
 ---
 
 ## ⚙️ Instalación y ejecución
@@ -209,7 +223,7 @@ La aplicación puede ser desplegada en:
 ## 📈 Optimización
 
 * Uso de estructura modular
-* Código limpio y reutilizable
+* Código limpio y reutilizable más o menos
 * Validaciones en frontend y backend
 * Preparado para mejoras de rendimiento (Lighthouse)
 
@@ -217,7 +231,7 @@ La aplicación puede ser desplegada en:
 
 ## 👨‍💻 Autor
 
-Desarrollado por: **Yonier Viveros**
+Desarrollado por: **Yonier Viveros** 
 
 ---
 
