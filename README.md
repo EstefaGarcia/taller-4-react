@@ -57,7 +57,7 @@ gastos/
 │   │   ├── authRoutes.js
 │   │   └── expenseRoutes.js
 │   │
-│   ├── .env ❌ (NO se sube)
+│   ├── .env 
 │   ├── .gitignore
 │   ├── package.json
 │   └── index.js

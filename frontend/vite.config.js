@@ -10,7 +10,7 @@ export default defineConfig({
       includeAssets: [  'pwa-192x192.png', 'favicon.svg', 'apple-touch-icon.png', 'mask-icon.svg',  'robots.txt'],
       workbox:{
         navigateFallback:"/index.html",
-        globPatterns: ["*/.{jsx,css,html,png,jpg,ico,txt}"]
+        globPatterns: ["**/.{jsx,css,html,png,jpg,ico,txt}"]
 
       },
       manifest: {
