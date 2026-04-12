@@ -116,6 +116,7 @@ Vistas de la aplicación
 <img src="./frontend/src/assets/screenshots/dashboard.png">
 📱 Vista móvil
 <img src="./frontend/src/assets/screenshots/mobile.png">
+
 ⚙️ Instalación
 1️⃣ Clonar el repositorio
 git clone https://github.com/tu-usuario/tu-repo.git
