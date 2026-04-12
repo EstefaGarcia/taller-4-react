@@ -14,9 +14,9 @@ export default defineConfig({
 
       },
       manifest: {
-        name: 'Gastos Diarios',
+        name: 'Aplicacion de gastos diarios',
         short_name: 'Gastos',
-        description: 'Aplicación para calcular gastos diarios',
+        description: 'Aplicación para registrar gastos gastos diarios',
         start_url: "/",
         display: "standalone",
         background_color: '#ffffff',
@@ -24,13 +24,13 @@ export default defineConfig({
 
         screenshots:[
           {
-          src: "/image/logo_sena.png",
+          src: "/image/logo.png",
           sizes: "350x350",
           type: "image/png",
           form_factor: "wide"
           },
           {
-               src: "/image/logo_sena.png",
+               src: "/image/logo.png",
               sizes: "350x350",
              type: "image/png",
             form_factor: "narrow"

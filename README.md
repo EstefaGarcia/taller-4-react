@@ -1,41 +1,33 @@
-# 💸 Aplicación de Gastos Diarios (React + Vite + PWA)
+💰 Sistema de Gestión de Gastos Diarios (React + Vite + PWA)
+📌 Descripción general
 
-## 📌 Descripción
+Esta aplicación web está diseñada para gestionar gastos personales de forma eficiente, permitiendo a los usuarios registrar, visualizar y administrar sus consumos diarios.
 
-Esta aplicación web permite a los usuarios **registrar, visualizar y gestionar sus gastos diarios**, asociando cada gasto a un usuario autenticado.
+Incluye un sistema completo de autenticación de usuarios, asegurando que cada persona acceda únicamente a su información. La persistencia de datos se maneja con MongoDB, mientras que la comunicación entre cliente y servidor se realiza mediante Axios.
 
-Cuenta con un sistema completo de **autenticación (registro e inicio de sesión)** y almacenamiento persistente mediante **MongoDB**, conectando el frontend con el backend a través de **Axios**.
+Entre sus principales capacidades se destacan:
 
-Además, incluye funcionalidades como:
-
-* Registro de gastos con  responsable y fecha
-* Eliminación de gastos
-* Resumen dinámico por persona
-* Protección de rutas mediante autenticación
-* Diseño responsive adaptable a diferentes dispositivos
-
----
-
-## 🚀 Tecnologías utilizadas
-
-### 🖥️ Frontend
-
-* React
-* Vite
-* Material UI (MUI)
-* React Router DOM
-* Axios
-* Recharts (gráficas)
-* PWA (vite-plugin-pwa)
-
-### ⚙️ Backend
-
-* Node.js
-* Express
-* MongoDB
-* Mongoose
-* JWT (autenticación)
-* bcryptjs (hash de contraseñas)
+Registro de gastos con fecha y responsable
+Eliminación de registros
+Visualización de resúmenes por usuario
+Protección de rutas privadas
+Interfaz adaptable (responsive)
+🚀 Stack tecnológico
+🖥️ Cliente (Frontend)
+React
+Vite
+Material UI (MUI)
+React Router DOM
+Axios
+Recharts
+vite-plugin-pwa
+⚙️ Servidor (Backend)
+Node.js
+Express
+MongoDB
+Mongoose
+JSON Web Token (JWT)
+bcryptjs
 
 ---
 
@@ -78,6 +70,8 @@ gastos/
 │   ├── src/
 │   │   ├── api/
 │   │   │   ├── index.js
+|   |   |   ├──components/
+|   |   |        ├──ApiRyC
 │   │   │   
 │   │   │   
 │   │   │
@@ -115,135 +109,70 @@ gastos/
 |
 └── README.md
 
-
-
-
-## 📸 Screenshots
-
-### 🔐 Login
-![Login](./frontend/src/assets/screenshots/login.png)
+Vistas de la aplicación
+🔐 Pantalla de acceso
 <img src="./frontend/src/assets/screenshots/login.png">
-
-### 💸 Dashboard
-![Dashboard](././frontend/src/assets/screenshots/dashboard.png)
+💸 Panel principal
 <img src="./frontend/src/assets/screenshots/dashboard.png">
-
-
-### 📱 Responsive
-![Mobile](./frontend/src/assets/screenshots/mobile.png)
+📱 Vista móvil
 <img src="./frontend/src/assets/screenshots/mobile.png">
-
----
-
-## ⚙️ Instalación y ejecución
-
-### 🔹 1. Clonar repositorio
-
-```bash
+⚙️ Instalación
+1️⃣ Clonar el repositorio
 git clone https://github.com/tu-usuario/tu-repo.git
-```
-
----
-
-### 🔹 2. Frontend
-
-```bash
+2️⃣ Ejecutar el frontend
 cd frontend
 npm install
 npm run dev
-```
-
----
-
-### 🔹 3. Backend
-
-```bash
+3️⃣ Ejecutar el backend
 cd backend
 npm install
 node index.js
-```
+🔐 Variables de entorno
 
----
+Crear un archivo .env dentro del backend con la siguiente configuración:
 
-## 🔐 Variables de entorno
-
-Crear un archivo `.env` en el backend:
-
-```
-MONGO_URI=tu_conexion_mongodb
-JWT_SECRET=tu_secreto
+MONGO_URI=tu_uri_de_mongodb
+JWT_SECRET=clave_secreta
 PORT=3000
-```
+🔗 Comunicación entre cliente y servidor
 
----
+Las solicitudes HTTP se realizan con Axios, incluyendo el token de autenticación en cada petición:
 
-## 🔗 Conexión Frontend - Backend
+Authorization: Bearer <token>
+📱 Aplicación PWA
 
-Se realiza mediante **Axios**, incluyendo el token JWT en cada petición:
+La app está configurada como Progressive Web App, lo que permite:
 
-```js
-Authorization: Bearer token
-```
+Instalación en dispositivos móviles
+Uso con conexión limitada
+Uso de Service Worker
+Definición de manifest
+📊 Funcionalidades clave
 
----
-
-## 📱 PWA
-
-La aplicación cuenta con configuración PWA:
-
-* Manifest configurado
-* Iconos
-* Service Worker
-* Instalable en dispositivos móviles
-
----
-
-## 📊 Funcionalidades principales
-
-✔ Registro de usuario
-✔ Inicio de sesión
-✔ Protección de rutas
-✔ Crear gastos
-✔ Eliminar gastos
-✔ Resumen dinámico por responsable
+✔ Registro e inicio de sesión
+✔ Control de acceso a rutas protegidas
+✔ Creación y eliminación de gastos
+✔ Visualización de datos por usuario
 ✔ Cierre de sesión
 
----
+🌐 Opciones de despliegue
 
-## 📸 Capturas de pantalla
+Puedes publicar la aplicación en:
 
-👉 (Agrega aquí screenshots de tu app)
+Frontend: Vercel
+Backend: Render o Railway
+📈 Mejores prácticas implementadas
+Arquitectura modular
+Separación de responsabilidades
+Validaciones en cliente y servidor
+Código reutilizable
+Base lista para optimización futura
+👨‍💻 Autor
 
----
+Desarrollado por: Jordy Ramírez
 
-## 🌐 Despliegue
+📌 Estado actual
 
-La aplicación puede ser desplegada en:
-
-* Vercel (frontend)
-* Render / Railway (backend)
-
----
-
-## 📈 Optimización
-
-* Uso de estructura modular
-* Código limpio y reutilizable más o menos
-* Validaciones en frontend y backend
-* Preparado para mejoras de rendimiento (Lighthouse)
-
----
-
-## 👨‍💻 Autor
-
-Desarrollado por: **Yonier Viveros** 
-
----
-
-## ✅ Estado del proyecto
-
-✔ Funcional
-✔ Escalable
-✔ Listo para producción (mejorable con features adicionales)
-
----
+🟢 Aplicación funcional
+🟢 Estructura escalable
+🟡 Mejorable con nuevas características
