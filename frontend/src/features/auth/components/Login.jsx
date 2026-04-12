@@ -104,11 +104,12 @@ export const Login = () => {
               {view === "recover" && "Recuperar"}
             </Typography>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} autoComplete="off">
               <TextField
                 fullWidth
                 label="Correo"
                 name="email"
+                autoComplete="new-email"
                 margin="normal"
                 onChange={handleChange}
                 value={values.email || ""}
@@ -129,6 +130,7 @@ export const Login = () => {
                   label="Contraseña"
                   type="password"
                   name="password"
+                  autoComplete="new-password"
                   margin="normal"
                   onChange={handleChange}
                   value={values.password || ""}
