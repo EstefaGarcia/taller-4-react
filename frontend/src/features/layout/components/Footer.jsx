@@ -1,199 +1,3 @@
-import { Button, Typography, Box, Container, Paper } from "@mui/material"
-import { Link } from "react-router-dom"
-
-export const Content = () => {
-  return (
-    <Box sx={{ background: "#f8fafc" }}>
-
-      {/* HERO CLARO */}
-      <Box
-        sx={{
-          py: 10,
-          background: "linear-gradient(135deg, #e0f2fe, #f0fdf4)"
-        }}
-      >
-        <Container maxWidth="md" sx={{ textAlign: "center" }}>
-          <Typography variant="h3" fontWeight="bold" mb={2}>
-            Organiza tus finanzas sin complicaciones 💡
-          </Typography>
-
-          <Typography sx={{ mb: 4, color: "#475569" }}>
-            Lleva el control de tus ingresos y gastos de forma sencilla, clara y rápida.
-            Empieza a tomar mejores decisiones con tu dinero.
-          </Typography>
-
-          <Link to="/login">
-            <Button
-              variant="contained"
-              size="large"
-              sx={{
-                px: 4,
-                py: 1.2,
-                borderRadius: 3,
-                background: "linear-gradient(135deg, #3b82f6, #22c55e)",
-                fontWeight: "bold"
-              }}
-            >
-              Comenzar
-            </Button>
-          </Link>
-        </Container>
-      </Box>
-
-      {/* BENEFICIOS */}
-      <Container sx={{ py: 10 }}>
-        <Typography variant="h4" textAlign="center" mb={6}>
-          Ventajas principales
-        </Typography>
-
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "repeat(3,1fr)" },
-            gap: 4
-          }}
-        >
-          {["Control detallado", "Ahorro efectivo", "Uso sencillo"].map((title, i) => (
-            <Paper
-              key={i}
-              sx={{
-                p: 4,
-                borderRadius: 4,
-                textAlign: "center",
-                transition: "0.3s",
-                '&:hover': { transform: "translateY(-6px)" }
-              }}
-            >
-              <Typography variant="h6" mb={1}>{title}</Typography>
-              <Typography sx={{ color: "#64748b" }}>
-                Mejora tu organización financiera con herramientas simples y efectivas.
-              </Typography>
-            </Paper>
-          ))}
-        </Box>
-      </Container>
-
-      {/* FUNCIONAMIENTO */}
-      <Box sx={{ background: "#e2e8f0", py: 10 }}>
-        <Container>
-          <Typography variant="h4" textAlign="center" mb={6}>
-            ¿Cómo funciona?
-          </Typography>
-
-          <Box
-            sx={{
-              display: "grid",
-              gridTemplateColumns: { xs: "1fr", md: "repeat(3,1fr)" },
-              gap: 4,
-              textAlign: "center"
-            }}
-          >
-            <Box>
-              <Typography variant="h5">1️⃣ Registra</Typography>
-              <Typography>Agrega tus movimientos diarios fácilmente</Typography>
-            </Box>
-
-            <Box>
-              <Typography variant="h5">2️⃣ Visualiza</Typography>
-              <Typography>Consulta tu información organizada</Typography>
-            </Box>
-
-            <Box>
-              <Typography variant="h5">3️⃣ Mejora</Typography>
-              <Typography>Toma mejores decisiones financieras</Typography>
-            </Box>
-          </Box>
-        </Container>
-      </Box>
-
-      {/* STATS */}
-      <Container sx={{ py: 10, textAlign: "center" }}>
-        <Typography variant="h4" mb={4}>Resultados reales</Typography>
-
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "repeat(3,1fr)" },
-            gap: 3
-          }}
-        >
-          <Box>
-            <Typography variant="h3" color="primary">+25%</Typography>
-            <Typography>Ahorro promedio</Typography>
-          </Box>
-
-          <Box>
-            <Typography variant="h3" color="primary">+800</Typography>
-            <Typography>Usuarios activos</Typography>
-          </Box>
-
-          <Box>
-            <Typography variant="h3" color="primary">90%</Typography>
-            <Typography>Satisfacción</Typography>
-          </Box>
-        </Box>
-      </Container>
-
-      {/* REPOSITORIO */}
-      <Box sx={{ background: "#f1f5f9", py: 10, textAlign: "center" }}>
-        <Container>
-          <Typography variant="h4" mb={2}>Código del proyecto</Typography>
-          <Typography mb={3}>
-            Explora el código completo en GitHub
-          </Typography>
-
-          <a
-            href="https://github.com/yonier321/gastos-app"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Button variant="outlined" size="large">
-              Ver repositorio
-            </Button>
-          </a>
-        </Container>
-      </Box>
-
-      {/* CTA FINAL */}
-      <Box
-        sx={{
-          py: 10,
-          textAlign: "center",
-          background: "linear-gradient(135deg, #3b82f6, #22c55e)",
-          color: "white"
-        }}
-      >
-        <Container>
-          <Typography variant="h4" fontWeight="bold" mb={2}>
-            Empieza hoy 🚀
-          </Typography>
-
-          <Typography mb={3}>
-            Mejora tu control financiero desde ahora
-          </Typography>
-
-          <Link to="/login">
-            <Button
-              variant="contained"
-              size="large"
-              sx={{
-                background: "white",
-                color: "#0f172a",
-                borderRadius: 3,
-                px: 4
-              }}
-            >
-              Ir al Login
-            </Button>
-          </Link>
-        </Container>
-      </Box>
-
-    </Box>
-  )
-}
-
-// ================= FOOTER =================
 export const Footer = () => {
   return (
     <footer
@@ -207,64 +11,88 @@ export const Footer = () => {
         style={{
           maxWidth: "1200px",
           margin: "0 auto",
-          padding: "40px 20px"
+          padding: "50px 20px"
         }}
       >
 
+        {/* 🔝 PARTE SUPERIOR */}
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: "30px"
+            display: "flex",
+            flexDirection: "column",
+            gap: "30px",
+            marginBottom: "40px"
           }}
         >
 
+          {/* APP + DESCRIPCIÓN */}
           <div>
-            <h3 style={{ marginBottom: "10px" }}>App de Gastos 💸</h3>
-            <p style={{ opacity: 0.7 }}>
-              Gestiona tus finanzas personales de forma simple, rápida y segura.
-              Diseñada para ayudarte a tomar mejores decisiones con tu dinero.
+            <h2 style={{ marginBottom: "10px" }}> Api Gastos</h2>
+            <p style={{ opacity: 0.7, maxWidth: "500px" }}>
+              Una herramienta simple para gestionar tus finanzas, visualizar tus gastos
+              y mejorar tu control económico día a día.
             </p>
           </div>
 
-          <div>
-            <h4 style={{ marginBottom: "10px" }}>Autor</h4>
-            <p style={{ opacity: 0.8 }}>Jordy Ramirez</p>
-            <p style={{ opacity: 0.6, fontSize: "14px" }}>
-              Desarrollador del sistema de gestión de gastos.
-            </p>
-          </div>
+          {/* BLOQUES EN FILA */}
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "40px",
+              justifyContent: "space-between"
+            }}
+          >
 
-          <div>
-            <h4 style={{ marginBottom: "10px" }}>Contacto</h4>
-            <p style={{ opacity: 0.8 }}>📧 correo@email.com</p>
-            <p style={{ opacity: 0.8 }}>📱 +57 300 000 0000</p>
-          </div>
+            {/* AUTOR */}
+            <div style={{ minWidth: "200px" }}>
+              <h4>👩‍💻 Autor</h4>
+              <p style={{ opacity: 0.8 }}>Estefanía Echeverry</p>
+              <p style={{ opacity: 0.6, fontSize: "14px" }}>
+                Desarrollo del sistema de gestión de gastos.
+              </p>
+            </div>
 
-          <div>
-            <h4 style={{ marginBottom: "10px" }}>Información</h4>
-            <p style={{ opacity: 0.7 }}>
-              Aplicación desarrollada con React y Material UI.
-            </p>
-          </div>
+            {/* CONTACTO */}
+            <div style={{ minWidth: "200px" }}>
+              <h4>📞 Contacto</h4>
+              <p style={{ opacity: 0.8 }}>correo@email.com</p>
+              <p style={{ opacity: 0.8 }}>+57 300 000 0000</p>
+            </div>
 
+            {/* TECNOLOGÍA */}
+            <div style={{ minWidth: "200px" }}>
+              <h4>⚙️ Tecnologías</h4>
+              <p style={{ opacity: 0.7 }}>React</p>
+              <p style={{ opacity: 0.7 }}>Material UI</p>
+              <p style={{ opacity: 0.7 }}>Axios</p>
+            </div>
+
+          </div>
         </div>
 
+        {/* 🔻 PARTE INFERIOR */}
         <div
           style={{
             borderTop: "1px solid rgba(255,255,255,0.1)",
-            marginTop: "30px",
             paddingTop: "20px",
-            textAlign: "center",
-            fontSize: "14px",
-            opacity: 0.7
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+            alignItems: "center",
+            textAlign: "center"
           }}
         >
-          © 2026 - App de Gastos Diarios | Desarrollado por Jordy Ramirez
+          <span style={{ opacity: 0.7, fontSize: "14px" }}>
+            © 2026 App de Gastos Diarios
+          </span>
+
+          <span style={{ opacity: 0.5, fontSize: "13px" }}>
+            Desarrollado por Estefanía Echeverry
+          </span>
         </div>
 
       </div>
     </footer>
   )
 }
-

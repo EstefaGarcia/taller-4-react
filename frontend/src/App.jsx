@@ -5,7 +5,7 @@ import { Footer } from "./features/layout/components/Footer"
 import { ApiRyC_Axios } from './api/components/ApiRyC'
 import  {Login}  from './features/auth/components/Login'
 import { Toolbar } from "@mui/material"
-import Expenses from './features/layout/pages/Expenses'
+import Expenses from './dashboard/Expenses'
 
 function App() {
   return (

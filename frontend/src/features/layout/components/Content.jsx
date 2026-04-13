@@ -3,173 +3,156 @@ import { Link } from "react-router-dom"
 
 export const Content = () => {
   return (
-    <Box sx={{ background: "#f8fafc" }}>
+    <Box sx={{ background: "#f1f5f9", minHeight: "100vh" }}>
 
-      {/* HERO CLARO */}
-      <Box
-        sx={{
-          py: 10,
-          background: "linear-gradient(135deg, #e0f2fe, #f0fdf4)"
-        }}
-      >
-        <Container maxWidth="md" sx={{ textAlign: "center" }}>
-          <Typography variant="h3" fontWeight="bold" mb={2}>
-            Organiza tus finanzas sin complicaciones 💡
-          </Typography>
-
-          <Typography sx={{ mb: 4, color: "#475569" }}>
-            Lleva el control de tus ingresos y gastos de forma sencilla, clara y rápida.
-            Empieza a tomar mejores decisiones con tu dinero.
-          </Typography>
-
-          <Link to="/login">
-            <Button
-              variant="contained"
-              size="large"
-              sx={{
-                px: 4,
-                py: 1.2,
-                borderRadius: 3,
-                background: "linear-gradient(135deg, #3b82f6, #22c55e)",
-                fontWeight: "bold"
-              }}
-            >
-              Comenzar
-            </Button>
-          </Link>
-        </Container>
-      </Box>
-
-      {/* BENEFICIOS */}
+      {/* HERO + INFO EN GRID */}
       <Container sx={{ py: 10 }}>
-        <Typography variant="h4" textAlign="center" mb={6}>
-          Ventajas principales
-        </Typography>
-
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "repeat(3,1fr)" },
-            gap: 4
+            gridTemplateColumns: { xs: "1fr", md: "1.2fr 1fr" },
+            gap: 6,
+            alignItems: "center"
           }}
         >
-          {["Control detallado", "Ahorro efectivo", "Uso sencillo"].map((title, i) => (
-            <Paper
-              key={i}
-              sx={{
-                p: 4,
-                borderRadius: 4,
-                textAlign: "center",
-                transition: "0.3s",
-                '&:hover': { transform: "translateY(-6px)" }
-              }}
-            >
-              <Typography variant="h6" mb={1}>{title}</Typography>
-              <Typography sx={{ color: "#64748b" }}>
-                Mejora tu organización financiera con herramientas simples y efectivas.
+          {/* TEXTO */}
+          <Box>
+            <Typography variant="h3" fontWeight="bold" mb={3}>
+              Control total de tus finanzas 💸
+            </Typography>
+
+            <Typography sx={{ color: "#475569", mb: 4 }}>
+              Una forma moderna de gestionar tus gastos, entender tu dinero
+              y mejorar tu futuro financiero sin complicaciones.
+            </Typography>
+
+            <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
+              <Link to="/login">
+                <Button variant="contained" size="large">
+                  Empezar ahora
+                </Button>
+              </Link>
+
+              <a
+                href="https://github.com/EstefaGarcia/taller-4-react.git"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button variant="outlined" size="large">
+                  Ver código
+                </Button>
+              </a>
+            </Box>
+          </Box>
+
+          {/* TARJETA RESUMEN */}
+          <Paper
+            elevation={6}
+            sx={{
+              p: 4,
+              borderRadius: 4,
+              background: "#0f172a",
+              color: "white"
+            }}
+          >
+            <Typography variant="h6" mb={2}>
+              Resumen rápido
+            </Typography>
+
+            <Typography>✔ Registra gastos diarios</Typography>
+            <Typography>✔ Analiza tus hábitos</Typography>
+            <Typography>✔ Mejora tu ahorro</Typography>
+
+            <Box mt={3}>
+              <Typography variant="h4" color="#22c55e">
+                +25%
               </Typography>
-            </Paper>
-          ))}
+              <Typography variant="body2">
+                Mejora promedio en control financiero
+              </Typography>
+            </Box>
+          </Paper>
         </Box>
       </Container>
 
-      {/* FUNCIONAMIENTO */}
-      <Box sx={{ background: "#e2e8f0", py: 10 }}>
+      {/* SECCIÓN TIPO FEATURES */}
+      <Box sx={{ py: 10, background: "#ffffff" }}>
         <Container>
           <Typography variant="h4" textAlign="center" mb={6}>
-            ¿Cómo funciona?
+            Lo que puedes hacer
           </Typography>
 
           <Box
             sx={{
               display: "grid",
-              gridTemplateColumns: { xs: "1fr", md: "repeat(3,1fr)" },
-              gap: 4,
-              textAlign: "center"
+              gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr", md: "repeat(4,1fr)" },
+              gap: 3
             }}
           >
-            <Box>
-              <Typography variant="h5">1️⃣ Registra</Typography>
-              <Typography>Agrega tus movimientos diarios fácilmente</Typography>
-            </Box>
-
-            <Box>
-              <Typography variant="h5">2️⃣ Visualiza</Typography>
-              <Typography>Consulta tu información organizada</Typography>
-            </Box>
-
-            <Box>
-              <Typography variant="h5">3️⃣ Mejora</Typography>
-              <Typography>Toma mejores decisiones financieras</Typography>
-            </Box>
+            {[
+              "Registrar gastos",
+              "Filtrar por categoría",
+              "Ver estadísticas",
+              "Controlar responsables"
+            ].map((item, i) => (
+              <Paper
+                key={i}
+                sx={{
+                  p: 3,
+                  borderRadius: 3,
+                  textAlign: "center",
+                  background: "#f8fafc",
+                  transition: "0.3s",
+                  '&:hover': {
+                    transform: "scale(1.05)"
+                  }
+                }}
+              >
+                <Typography fontWeight="bold">{item}</Typography>
+              </Paper>
+            ))}
           </Box>
         </Container>
       </Box>
 
-      {/* STATS */}
-      <Container sx={{ py: 10, textAlign: "center" }}>
-        <Typography variant="h4" mb={4}>Resultados reales</Typography>
+      {/* BLOQUE DIFERENTE (COMPARACIÓN) */}
+      <Container sx={{ py: 10 }}>
+        <Typography variant="h4" textAlign="center" mb={6}>
+          Antes vs Ahora
+        </Typography>
 
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "repeat(3,1fr)" },
-            gap: 3
+            gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+            gap: 4
           }}
         >
-          <Box>
-            <Typography variant="h3" color="primary">+25%</Typography>
-            <Typography>Ahorro promedio</Typography>
-          </Box>
+          <Paper sx={{ p: 4, borderRadius: 4 }}>
+            <Typography variant="h6" mb={2}>❌ Antes</Typography>
+            <Typography color="text.secondary">
+              Gastos desorganizados, sin control claro y decisiones improvisadas.
+            </Typography>
+          </Paper>
 
-          <Box>
-            <Typography variant="h3" color="primary">+800</Typography>
-            <Typography>Usuarios activos</Typography>
-          </Box>
-
-          <Box>
-            <Typography variant="h3" color="primary">90%</Typography>
-            <Typography>Satisfacción</Typography>
-          </Box>
+          <Paper sx={{ p: 4, borderRadius: 4, background: "#dcfce7" }}>
+            <Typography variant="h6" mb={2}>✅ Ahora</Typography>
+            <Typography>
+              Control total, decisiones inteligentes y ahorro constante.
+            </Typography>
+          </Paper>
         </Box>
       </Container>
 
-      {/* REPOSITORIO */}
-      <Box sx={{ background: "#f1f5f9", py: 10, textAlign: "center" }}>
-        <Container>
-          <Typography variant="h4" mb={2}>Código del proyecto</Typography>
-          <Typography mb={3}>
-            Explora el código completo en GitHub
+      {/* CTA FINAL DIFERENTE */}
+      <Box sx={{ py: 10, background: "#0f172a", color: "white" }}>
+        <Container textAlign="center">
+          <Typography variant="h4" mb={2}>
+            Da el siguiente paso 🚀
           </Typography>
 
-          <a
-            href="https://github.com/jordiramirez98/taller-react-4.git"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Button variant="outlined" size="large">
-              Ver repositorio
-            </Button>
-          </a>
-        </Container>
-      </Box>
-
-      {/* CTA FINAL */}
-      <Box
-        sx={{
-          py: 10,
-          textAlign: "center",
-          background: "linear-gradient(135deg, #3b82f6, #22c55e)",
-          color: "white"
-        }}
-      >
-        <Container>
-          <Typography variant="h4" fontWeight="bold" mb={2}>
-            Empieza hoy 🚀
-          </Typography>
-
-          <Typography mb={3}>
-            Mejora tu control financiero desde ahora
+          <Typography mb={4} color="#94a3b8">
+            Empieza a organizar tu dinero como un profesional
           </Typography>
 
           <Link to="/login">
@@ -177,13 +160,12 @@ export const Content = () => {
               variant="contained"
               size="large"
               sx={{
-                background: "white",
-                color: "#0f172a",
-                borderRadius: 3,
-                px: 4
+                background: "#22c55e",
+                px: 5,
+                borderRadius: 3
               }}
             >
-              Ir al Login
+              Comenzar gratis
             </Button>
           </Link>
         </Container>

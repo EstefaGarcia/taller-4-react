@@ -5,10 +5,8 @@ import {
   Container,
   Typography,
   Box,
-  Paper,
-  InputAdornment
+  Paper
 } from "@mui/material"
-import { Mail, Lock } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import { useAuthForm } from "../hooks/useAuthForm"
 import { loginUser, registerUser } from "../../../services/auth"
@@ -53,168 +51,145 @@ export const Login = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "linear-gradient(135deg, #0f172a, #1e293b)"
+        background: "linear-gradient(135deg, #0f172a, #1e3a8a, #0ea5e9)"
       }}
     >
-      <Container maxWidth="md">
+      <Container maxWidth="sm">
         <Paper
-          elevation={10}
+          elevation={8}
           sx={{
-            display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
-            borderRadius: 5,
-            overflow: "hidden"
+            p: { xs: 3, sm: 5 },
+            borderRadius: 4,
+            background: "#1e293b",
+            color: "white"
           }}
         >
-          {/* LADO IZQUIERDO (DISEÑO) */}
-          <Box
-            sx={{
-              display: { xs: "none", md: "flex" },
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              background: "linear-gradient(135deg, #6366f1, #22c55e)",
-              color: "white",
-              p: 4
-            }}
-          >
-            <Typography variant="h3" fontWeight="bold">
-              {view === "login" ? "Hola 👋" : "Únete 🚀"}
+          {/* TITULO */}
+          <Box textAlign="center" mb={3}>
+            <Typography variant="h4" fontWeight="bold">
+              💸Api Gastos
             </Typography>
 
-            <Typography mt={2} textAlign="center">
+            <Typography variant="body2" color="#94a3b8">
               {view === "login"
-                ? "Gestiona tus gastos de forma inteligente"
-                : "Crea tu cuenta en segundos"}
+                ? "Inicia sesión para continuar"
+                : view === "register"
+                ? "Crea tu cuenta rápidamente"
+                : "Recupera tu acceso"}
             </Typography>
           </Box>
 
-          {/* FORMULARIO */}
-          <Box
-            sx={{
-              p: { xs: 3, sm: 5 },
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center"
-            }}
-          >
-            <Typography variant="h4" fontWeight="bold" mb={2}>
-              {view === "login" && "Iniciar sesión"}
-              {view === "register" && "Crear cuenta"}
-              {view === "recover" && "Recuperar"}
-            </Typography>
+          {/* FORM */}
+          <form onSubmit={handleSubmit}>
+            <TextField
+              fullWidth
+              label="Correo"
+              name="email"
+              margin="normal"
+              onChange={handleChange}
+              value={values.email || ""}
+              error={!!errors.email}
+              helperText={errors.email}
+              sx={{
+                input: { color: "white" },
+                label: { color: "#94a3b8" }
+              }}
+            />
 
-            <form onSubmit={handleSubmit} autoComplete="off">
+            {view !== "recover" && (
               <TextField
                 fullWidth
-                label="Correo"
-                name="email"
-                autoComplete="new-email"
+                label="Contraseña"
+                type="password"
+                name="password"
                 margin="normal"
                 onChange={handleChange}
-                value={values.email || ""}
-                error={!!errors.email}
-                helperText={errors.email}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <Mail size={18} />
-                    </InputAdornment>
-                  )
+                value={values.password || ""}
+                error={!!errors.password}
+                helperText={errors.password}
+                sx={{
+                  input: { color: "white" },
+                  label: { color: "#94a3b8" }
                 }}
               />
+            )}
 
-              {view !== "recover" && (
-                <TextField
-                  fullWidth
-                  label="Contraseña"
-                  type="password"
-                  name="password"
-                  autoComplete="new-password"
-                  margin="normal"
-                  onChange={handleChange}
-                  value={values.password || ""}
-                  error={!!errors.password}
-                  helperText={errors.password}
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <Lock size={18} />
-                      </InputAdornment>
-                    )
-                  }}
-                />
-              )}
-
-              {view === "register" && (
-                <TextField
-                  fullWidth
-                  label="Confirmar contraseña"
-                  type="password"
-                  name="confirmPassword"
-                  margin="normal"
-                  onChange={handleChange}
-                  value={values.confirmPassword || ""}
-                  error={!!errors.confirmPassword}
-                  helperText={errors.confirmPassword}
-                />
-              )}
-
-              <Button
-                type="submit"
-                variant="contained"
+            {view === "register" && (
+              <TextField
                 fullWidth
+                label="Confirmar contraseña"
+                type="password"
+                name="confirmPassword"
+                margin="normal"
+                onChange={handleChange}
+                value={values.confirmPassword || ""}
+                error={!!errors.confirmPassword}
+                helperText={errors.confirmPassword}
                 sx={{
-                  mt: 3,
-                  py: 1.3,
-                  borderRadius: 3,
-                  background: "linear-gradient(135deg, #6366f1, #22c55e)",
-                  fontWeight: "bold"
+                  input: { color: "white" },
+                  label: { color: "#94a3b8" }
                 }}
+              />
+            )}
+
+            <Button
+              type="submit"
+              fullWidth
+              sx={{
+                mt: 3,
+                py: 1.3,
+                borderRadius: 3,
+                background: "#22c55e",
+                color: "white",
+                fontWeight: "bold",
+                '&:hover': {
+                  background: "#16a34a"
+                }
+              }}
+            >
+              {view === "login" && "Entrar"}
+              {view === "register" && "Registrarse"}
+              {view === "recover" && "Enviar correo"}
+            </Button>
+          </form>
+
+          {/* LINKS */}
+          <Box mt={3} textAlign="center">
+            {view === "login" && (
+              <>
+                <Typography
+                  sx={{ cursor: "pointer", color: "#38bdf8" }}
+                  onClick={() => setView("recover")}
+                >
+                  ¿Olvidaste tu contraseña?
+                </Typography>
+
+                <Typography
+                  sx={{ cursor: "pointer", mt: 1, color: "#22c55e" }}
+                  onClick={() => setView("register")}
+                >
+                  Crear cuenta
+                </Typography>
+              </>
+            )}
+
+            {view === "register" && (
+              <Typography
+                sx={{ cursor: "pointer", color: "#38bdf8" }}
+                onClick={() => setView("login")}
               >
-                {view === "login" && "Entrar"}
-                {view === "register" && "Registrarse"}
-                {view === "recover" && "Enviar correo"}
-              </Button>
-            </form>
+                Ya tengo cuenta
+              </Typography>
+            )}
 
-            <Box mt={3} textAlign="center">
-              {view === "login" && (
-                <>
-                  <Typography
-                    sx={{ cursor: "pointer", mb: 1 }}
-                    onClick={() => setView("recover")}
-                  >
-                    ¿Olvidaste tu contraseña?
-                  </Typography>
-
-                  <Typography
-                    sx={{ cursor: "pointer" }}
-                    onClick={() => setView("register")}
-                  >
-                    Crear cuenta
-                  </Typography>
-                </>
-              )}
-
-              {view === "register" && (
-                <Typography
-                  sx={{ cursor: "pointer" }}
-                  onClick={() => setView("login")}
-                >
-                  Ya tengo cuenta
-                </Typography>
-              )}
-
-              {view === "recover" && (
-                <Typography
-                  sx={{ cursor: "pointer" }}
-                  onClick={() => setView("login")}
-                >
-                  Volver
-                </Typography>
-              )}
-            </Box>
+            {view === "recover" && (
+              <Typography
+                sx={{ cursor: "pointer", color: "#38bdf8" }}
+                onClick={() => setView("login")}
+              >
+                Volver
+              </Typography>
+            )}
           </Box>
         </Paper>
       </Container>

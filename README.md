@@ -1,27 +1,27 @@
-💰 Sistema de Gestión de Gastos Diarios (React + Vite + PWA)
-📌 Descripción general
+Gestor de Gastos Personales (React + Vite + PWA)
+🧾 Descripción
 
-Esta aplicación web está diseñada para gestionar gastos personales de forma eficiente, permitiendo a los usuarios registrar, visualizar y administrar sus consumos diarios.
+Esta aplicación web permite llevar un control claro y organizado de los gastos diarios. Cada usuario puede registrar, consultar y administrar sus consumos de manera individual gracias a un sistema de autenticación seguro.
 
-Incluye un sistema completo de autenticación de usuarios, asegurando que cada persona acceda únicamente a su información. La persistencia de datos se maneja con MongoDB, mientras que la comunicación entre cliente y servidor se realiza mediante Axios.
+El sistema está diseñado para ser intuitivo, rápido y accesible desde cualquier dispositivo, incluyendo móviles, gracias a su enfoque como aplicación progresiva (PWA).
 
-Entre sus principales capacidades se destacan:
-
-Registro de gastos con fecha y responsable
-Eliminación de registros
-Visualización de resúmenes por usuario
-Protección de rutas privadas
-Interfaz adaptable (responsive)
-🚀 Stack tecnológico
-🖥️ Cliente (Frontend)
+✨ Funcionalidades principales
+Registro de nuevos gastos con información detallada
+Eliminación de registros existentes
+Visualización de gastos por usuario autenticado
+Protección de rutas privadas mediante autenticación
+Interfaz adaptable a diferentes tamaños de pantalla
+Persistencia de datos en base de datos
+🛠️ Tecnologías utilizadas
+Frontend
 React
 Vite
-Material UI (MUI)
+Material UI
 React Router DOM
 Axios
 Recharts
 vite-plugin-pwa
-⚙️ Servidor (Backend)
+Backend
 Node.js
 Express
 MongoDB
@@ -29,13 +29,10 @@ Mongoose
 JSON Web Token (JWT)
 bcryptjs
 
----
 
-## 🧱 Arquitectura del proyecto
+🧱 Organización del proyecto
 
-El proyecto sigue una estructura **Feature-Based**, lo que permite mayor escalabilidad y mantenimiento.
-
-```
+El proyecto está estructurado bajo un enfoque modular basado en funcionalidades (Feature-Based Structure), lo que facilita su escalabilidad y mantenimiento.```
 gastos/
 │
 ├── backend/
@@ -65,14 +62,24 @@ gastos/
 ├── frontend/  
 │   ├── public/
 │   │   ├── icon.png
-│   │   └── manifest.json (auto generado)
+│   │   
 │   │
+|   |
+|   |
+|   |
+|   |
+|   |
+|   |
 │   ├── src/
 │   │   ├── api/
 │   │   │   ├── index.js
 |   |   |   ├──components/
 |   |   |        ├──ApiRyC
-│   │   │   
+│   │   | 
+|   |   ├── dashboard
+|   |   |         ├── Expenses.jsx
+|   |   |
+|   |   |  
 │   │   │   
 │   │   │
 │   │   ├── features/
@@ -88,11 +95,11 @@ gastos/
 │   │   │   │
 │   │   │   └── layout/
 │   │   │       ├── components/
-│   │   │       │   ├── Header.jsx
-│   │   │       │   ├── Footer.jsx
-│   │   │       │   └── Content.jsx
-│   │   │       └── pages/
-│   │   |         └── Expenses.jsx
+│   │   │          ├── Header.jsx
+│   │   │          ├── Footer.jsx
+│   │   │          └── Content.jsx
+│   │   │       
+│   │   |         
 │   │   ├── services/      
 |   |   |          ├── auth.service.js
 │   │   │          └── expenses.service.js    
@@ -112,8 +119,6 @@ gastos/
 Vistas de la aplicación
 🔐 Pantalla de acceso
 <img src="./frontend/src/assets/screenshots/login.png">
-💸 Panel principal
-<img src="./frontend/src/assets/screenshots/dashboard.png">
 📱 Vista móvil
 <img src="./frontend/src/assets/screenshots/mobile.png">
 
@@ -170,7 +175,7 @@ Código reutilizable
 Base lista para optimización futura
 👨‍💻 Autor
 
-Desarrollado por: Jordy Ramírez
+Desarrollado por: Estefanía Echeverry
 
 📌 Estado actual
 

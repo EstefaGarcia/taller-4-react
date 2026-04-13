@@ -25,9 +25,9 @@ export default defineConfig({
       },
 
       manifest: {
-        name: 'Aplicacion de gastos diarios',
-        short_name: 'Gastos',
-        description: 'Aplicación para registrar gastos diarios',
+        name: 'Api Gastos',
+        short_name: 'Gastos Diarios',
+        description: 'Aplicación web para llevar control de gastos diarios',
         start_url: '/',
         display: 'standalone',
         background_color: '#ffffff',
